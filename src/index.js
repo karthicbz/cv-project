@@ -5,6 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import PrintProvider, { Print, NoPrint } from 'react-easy-print';
 
+function printPage(e){
+  window.print();
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
@@ -13,7 +17,7 @@ root.render(
         <Print>
           <App />
         </Print>
-        <button>A Button</button>
+        <button onClick={printPage}>A Button</button>
       </NoPrint>
     </PrintProvider>
   </>
